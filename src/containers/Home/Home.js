@@ -6,6 +6,7 @@ import { getPokeTypes } from '../../utils/apiCalls';
 import { setPokeTypesState } from '../../actions/typeActions';
 
 import Loading from '../../components/Loading/Loading';
+import CardList from '../CardList/CardList';
 
 import './Home.css';
 
@@ -32,6 +33,7 @@ class Home extends Component {
       content = (
         <div>
           <h1 className="header"> POKéDEX </h1>
+          <CardList />
         </div>
       );
     }
