@@ -10,7 +10,7 @@ import CardList from '../CardList/CardList';
 
 import './Home.css';
 
-class Home extends Component {
+export class Home extends Component {
   constructor() {
     super();
     this.state = {
