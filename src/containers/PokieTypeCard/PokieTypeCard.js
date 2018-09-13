@@ -6,6 +6,8 @@ import { getPokemonByType } from '../../utils/apiCalls';
 import { addPokemonToState } from '../../actions/pokemonActions';
 import { setCurrentCard } from '../../actions/currentCardActions';
 
+import './PokieTypeCard.css';
+
 export class PokieTypeCard extends Component {
   handleClick = async () => {
     const { type, addPokemonToState, setCurrentCard, pokemon } = this.props;
@@ -23,7 +25,6 @@ export class PokieTypeCard extends Component {
 
   render() {
     const { type, currentCard, pokemon } = this.props;
-    console.log(pokemon);
     let content;
 
     if (type.name === currentCard) {
@@ -42,7 +43,7 @@ export class PokieTypeCard extends Component {
       content = <h3 onClick={this.handleClick}>{type.name}</h3>;
     }
 
-    return <div>{content}</div>;
+    return <div className="pokie-type-card">{content}</div>;
   }
 }
 
