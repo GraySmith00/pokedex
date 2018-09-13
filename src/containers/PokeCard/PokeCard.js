@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getPokemonByType } from '../../utils/apiCalls';
 import { addPokemonToState } from '../../actions/pokemonActions';
 
-class PokeCard extends Component {
+export class PokeCard extends Component {
   handleClick = async () => {
     const { type, addPokemonToState } = this.props;
     const pokies = await getPokemonByType(type.pokemon);
