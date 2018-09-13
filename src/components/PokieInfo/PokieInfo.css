@@ -1,0 +1,12 @@
+.pokie-info {
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.pokie-info img {
+  width: 50px;
+}
+
+.pokie-info p {
+  font-size: 0.8rem;
+}
