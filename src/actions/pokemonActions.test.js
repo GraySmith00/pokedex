@@ -1,16 +1,16 @@
 import * as actions from './pokemonActions';
-import { mockPokies } from './mockActionData';
+import { mockPokieObj } from './mockActionData';
 
 describe('pokemonActions', () => {
   it('should return an object with a type of ADD_POKEMON_TO_STATE, and a pokies array', () => {
-    const pokies = mockPokies;
+    const pokieObj = mockPokieObj;
 
     const expected = {
       type: 'ADD_POKEMON_TO_STATE',
-      pokies
+      pokieObj
     };
 
-    const result = actions.addPokemonToState(mockPokies);
+    const result = actions.addPokemonToState(mockPokieObj);
 
     expect(result).toEqual(expected);
   });

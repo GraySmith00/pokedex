@@ -6,19 +6,24 @@ import { getPokemonByType } from '../../utils/apiCalls';
 import { addPokemonToState } from '../../actions/pokemonActions';
 import { setCurrentCard } from '../../actions/currentCardActions';
 
-export class PokeCard extends Component {
+export class PokieTypeCard extends Component {
   handleClick = async () => {
-    const { type, addPokemonToState, setCurrentCard } = this.props;
-    const pokies = await getPokemonByType(type.pokemon);
-    const pokieObj = {
-      [type.name]: pokies
-    };
-    addPokemonToState(pokieObj);
+    const { type, addPokemonToState, setCurrentCard, pokemon } = this.props;
+
+    if (!Object.keys(pokemon).includes(type.name)) {
+      const pokies = await getPokemonByType(type.pokemon);
+      const pokieObj = {
+        [type.name]: pokies
+      };
+      addPokemonToState(pokieObj);
+    }
+
     setCurrentCard(type.name);
   };
 
   render() {
     const { type, currentCard, pokemon } = this.props;
+    console.log(pokemon);
     let content;
 
     if (type.name === currentCard) {
@@ -41,7 +46,7 @@ export class PokeCard extends Component {
   }
 }
 
-PokeCard.propTypes = {
+PokieTypeCard.propTypes = {
   type: PropTypes.object.isRequired,
   addPokemonToState: PropTypes.func.isRequired,
   setCurrentCard: PropTypes.func.isRequired,
@@ -61,4 +66,4 @@ export const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PokeCard);
+)(PokieTypeCard);

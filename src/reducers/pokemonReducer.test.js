@@ -1,10 +1,11 @@
 import { pokemonReducer } from './pokemonReducer';
 import * as actions from '../actions/pokemonActions';
-import { mockPokies } from './mockReducerData';
+
+import { mockPokieObj } from './mockReducerData';
 
 describe('pokemonReducer', () => {
   it('should return the initial state', () => {
-    const expected = [];
+    const expected = {};
 
     const result = pokemonReducer(undefined, {});
 
@@ -12,11 +13,11 @@ describe('pokemonReducer', () => {
   });
 
   it('should return the proper state when new pokies are added', () => {
-    const expected = mockPokies;
+    const expected = mockPokieObj;
 
     const result = pokemonReducer(
       undefined,
-      actions.addPokemonToState(mockPokies)
+      actions.addPokemonToState(mockPokieObj)
     );
 
     expect(result).toEqual(expected);

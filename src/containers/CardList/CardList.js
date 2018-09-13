@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import PokeCard from '../PokeCard/PokeCard';
+import PokieTypeCard from '../PokieTypeCard/PokieTypeCard';
 
 export const CardList = ({ types }) => {
   const displayCards = types.map(type => (
-    <PokeCard key={type.id} type={type} />
+    <PokieTypeCard key={type.id} type={type} />
   ));
 
   return <div>{displayCards}</div>;
