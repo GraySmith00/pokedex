@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import PokieTypeCard from '../PokieTypeCard/PokieTypeCard';
+import PokieCard from '../PokieCard/PokieCard';
 
 import './CardList.css';
 
 export const CardList = ({ types }) => {
   const displayCards = types.map(type => (
-    <PokieTypeCard key={type.id} type={type} />
+    <PokieCard key={type.id} type={type} />
   ));
 
   return <div className="card-list">{displayCards}</div>;
