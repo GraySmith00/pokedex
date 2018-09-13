@@ -1,8 +1,11 @@
-export const getPokeTypes = async () => {
+export const getPokeTypes = () => {
   const url = 'http://localhost:3001/types';
-  const response = await fetch(url);
-  const pokeTypes = await response.json();
-  return pokeTypes;
+  return fetch(url)
+    .then(response => response.json())
+    .then(pokeTypes => pokeTypes);
+  // const response = await fetch(url);
+  // const pokeTypes = await response.json();
+  // return pokeTypes;
 };
 
 export const getPokemonByType = async typeIds => {
