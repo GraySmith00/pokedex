@@ -2,5 +2,6 @@
   background: url('./loading.gif');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   height: 100vh;
 }
