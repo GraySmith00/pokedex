@@ -1,11 +1,8 @@
 import React from 'react';
+import './Loading.css';
 
 const Loading = () => {
-  return (
-    <div>
-      <img src={'./loading.gif'} alt="" />
-    </div>
-  );
+  return <div className="loading" />;
 };
 
 export default Loading;
