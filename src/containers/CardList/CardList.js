@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import PokeCard from '../PokeCard/PokeCard';
 
-const CardList = ({ types }) => {
+export const CardList = ({ types }) => {
   const displayCards = types.map(type => (
     <PokeCard key={type.id} type={type} />
   ));
